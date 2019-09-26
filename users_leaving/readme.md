@@ -12,9 +12,16 @@ A tool that will automate **_GOOGLE_** tasks to be completed when an employee le
 2. Run main.py
 3. Make sure the csv is in the same directory as main.py
 
-CHANGES:
-- Not all accounts are left open with vacation responders. Need to differentiate.
-- Give option to move Drive files to another employee, with itdrive as the backup default.
+### Headers and Format of users.csv
+|email*|remainActive*|vacationSubject*|vacationMessage*|managerEmail|driveTransferRecipient|
+|---|---|---|---|---|---|
+|employee1@company.com|n|Email Subject Here|Email Body Here|manager@company.com||
+|employee2@company.com|y|Email Subject Here|Email Body Here|manager@company.com|replacement@company.com|
+|employee3@company.com|y|Email Subject Here|Email Body Here|||
+
+Required fields are marked with an asterisk (*)
+If no value is supplied for managerEmail, no forwarding will be set up.
+If no value is supplied for driveTransferRecipient, the contents of the Drive will be transferred to the account designated in the config section of main.py.
 
 ## Employee User Outcomes
 1. Set vacation Gmail message

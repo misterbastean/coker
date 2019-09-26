@@ -1,22 +1,3 @@
-"""
-TODO CURRENTLY WORKING ON:
-- Updating try/except to check return value from os.system (https://stackoverflow.com/a/12373618)
-
-TODO BEFORE TESTING:
-1. Update config
-2. Install GAM on whatever computers need it
-
-
-TODO BEFORE IMPLEMENTING
-1. Logging
-2. Create list of delegated emails removed
-3. Create docs
-4. Create training video
-
-TODO IMPROVEMENTS
-1. Use thread waiting to make sure each function is finished before the next begins.
-"""
-
 import os
 import subprocess
 import csv
@@ -28,13 +9,13 @@ import random
 # =====================================================
 # CONFIG
 # =====================================================
-GAM = '/Users/joshuabastean/bin/gamadv-xtd/gam'  # Full path required; cannot use ~ for home directory
-driveEmail = "itdrive@coker.edu"  # This is where the Drive files will be transferred
+GAM = '/Users/homefolder/bin/gamadv-xtd/gam'  # Full path required; cannot use ~ for home directory
+driveEmail = "backupdrive@company.com"  # This is where the Drive files will be transferred
 
 # Setup Logging Config
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(name)s | %(message)s')
+logger.setLevel(logging.INFO)  # https://docs.python.org/3/library/logging.html#logging.Logger.setLevel
+formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(name)s | %(message)s')  # https://docs.python.org/3/library/logging.html#formatter-objects
 fileHandler = logging.FileHandler('logs.log')
 fileHandler.setFormatter(formatter)
 logger.addHandler(fileHandler)
