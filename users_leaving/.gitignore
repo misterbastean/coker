@@ -1,0 +1,5 @@
+.idea/
+.DS_Store
+hello.py
+logs.log
+test_users.csv
