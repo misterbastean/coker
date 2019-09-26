@@ -84,7 +84,7 @@ def forward_to_manager(username, manager_email):
         logger.info(f"Forwarding email to {manager_email}")
         print(f"Forwarding email to {manager_email}")
         result_a = os.system(f'{GAM} user {username} add forwardingaddress {manager_email}')
-        result_b = os.system(f'{GAM} user {username} forward on {manager_email} archive')
+        result_b = os.system(f'{GAM} user {username} forward on {manager_email}')
         if result_a == 0 and result_b == 0:
             logger.info('Forwarding email process complete')
             print('Forwarding email process complete')
