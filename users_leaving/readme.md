@@ -31,7 +31,7 @@ If no value is supplied for driveTransferRecipient, the contents of the Drive wi
 2. Disable email forwarding
 3. Add forwarding to manager (if desired).
 4. Delete OAuth Tokens, asps, and backup codes
-5. Copy entire Drive to itdrive@coker.edu Drive
+5. Copy entire Drive to either replacement employee or IT Drive (backup)
 6. Delete recovery information
 7. Remove email delegates
 8. Disable IMAP and POP
