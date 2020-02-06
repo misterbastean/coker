@@ -1,3 +1,6 @@
+# This is a hack of crap straight from the pit of hell. It does not follow even a semblance of best practice and should not be used by anyone, ever.
+# User requirements resulted in this abomination of hard-coded values. I am so sorry, and I feel bad for this atrocity. At least it's a super simple piece of crap.
+
 #Specify target OU (this is where users will be moved). Get this by right-clicking on the OU, choosing "Properties" => "Attribute Editor" then copying the "distinguishedName" property.
 $TargetOU = "OU=Dec 2019,OU=Alumni,OU=Users,OU=Coker,DC=profs,DC=local"
 
