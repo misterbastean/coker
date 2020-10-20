@@ -3,6 +3,8 @@ import subprocess
 from datetime import datetime, timedelta
 import csv
 
+GAM_PATH = "/Users/joshuabastean/bin/gamadv-xtd3/gam"
+
 
 @click.command()
 @click.option('--months', '-m', default=1,
@@ -44,7 +46,7 @@ def main(org_unit, months, changed, out):
 def get_all_usernames(ou):
     """Returns all usernames for the given OU."""
     if ou != "/":
-        sp = subprocess.Popen(["/Users/joshuabastean/bin/gamadv-xtd3/gam", "print", "users", "query", f"orgUnitPath={ou}"],
+        sp = subprocess.Popen([GAM_PATH, "print", "users", "query", f"orgUnitPath={ou}"],
                               stdout=subprocess.PIPE)
         data = sp.stdout.readlines()
         output = []
@@ -53,7 +55,7 @@ def get_all_usernames(ou):
         return output
     else:
         sp = subprocess.Popen(
-            ["/Users/joshuabastean/bin/gamadv-xtd3/gam", "print", "users"],
+            [GAM_PATH, "print", "users"],
             stdout=subprocess.PIPE)
         data = sp.stdout.readlines()
         output = []
@@ -66,7 +68,7 @@ def get_all_pw_users(months):
     """Gets the usernames for all password change events in the previous given months."""
     today = datetime.today()
     last = today - timedelta(days=30*months)
-    sp = subprocess.Popen(["/Users/joshuabastean/bin/gamadv-xtd3/gam", "report", "admin", "user", "sada.admin", "event",
+    sp = subprocess.Popen([GAM_PATH, "report", "admin", "user", "sada.admin", "event",
                            "CHANGE_PASSWORD", "range", last.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d")],
                           stdout=subprocess.PIPE)
     all_events = sp.stdout.readlines()
