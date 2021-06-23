@@ -9,3 +9,6 @@ A GAM deprovision tool that will automate __GOOGLE__ tasks to be completed when 
 
 ## Move Users
 A simple PowerShell script that will move users from one OU in AD to another OU, based on a CSV of sAMAccountnames. Very "hacky" right now, as the target OU is hardcoded, but that was the desired implementation by the end user, instead of including a second column in the input CSV.
+
+## Move Active Users
+A PowerShell script designed to be run daily to move users from the "NotActiveCurrentSemester" OU in AD into the proper OU, based on a report from Informer.
